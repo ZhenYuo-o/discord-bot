@@ -21,7 +21,7 @@ module.exports = {
         const content = interaction.options.getString('content');
         await interaction.reply({ content: 'Getting cute anime girls....mostly', fetchReply: true });
         let image
-        if(!content == null) {
+        if(content != null) {
             image = await axios.get(`https://api.nekosapi.com/v3/images/random/file?rating=${content}`, {responseType: 'arraybuffer'});
         } else {
             image = await axios.get(`https://api.nekosapi.com/v3/images/random/file?rating=safe`, {responseType: 'arraybuffer'});
