@@ -22,9 +22,9 @@ module.exports = {
         await interaction.reply({ content: 'Getting cute anime girls....mostly', fetchReply: true });
         let image
         if(content != null) {
-            image = await axios.get(`https://api.nekosapi.com/v3/images/random/file?rating=${content}`, {responseType: 'arraybuffer'});
+            image = await axios.get(`https://api.nekosapi.com/v4/images/random/file?rating=${content}`, {responseType: 'arraybuffer'});
         } else {
-            image = await axios.get(`https://api.nekosapi.com/v3/images/random/file?rating=safe`, {responseType: 'arraybuffer'});
+            image = await axios.get(`https://api.nekosapi.com/v4/images/random/file?rating=safe`, {responseType: 'arraybuffer'});
 
         }
         const attachment = new AttachmentBuilder(image.data,'anime_image.png');
